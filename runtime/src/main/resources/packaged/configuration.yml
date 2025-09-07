@@ -107,7 +107,7 @@ connector:
   socket.timeout: 1000000
 
 deploymentType: directory
-deploymentUnitsPath: "/tmp/workflows/"
+deploymentUnitsPath: "C://Srinath/WorkDirectory/"
 
 enableAuditRecord: True
 

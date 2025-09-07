@@ -53,7 +53,7 @@ public class RedriverService {
     private Long initialDelay = 10000L;
     private MessageManagerService messageService;
     @SuppressWarnings("rawtypes")
-	private ScheduledFuture scheduledFuture;
+    private ScheduledFuture scheduledFuture;
     private final RedriverRegistry redriverRegistry;
 
 
@@ -125,7 +125,7 @@ public class RedriverService {
                 tasksRedrived.add(
                         asyncRedriveService.submit(() -> {
                             try {
-                                redriverRegistry.redriveTask(e.getStateMachineId(), e.getTaskId() , e.getExecutionVersion());
+                                redriverRegistry.redriveTask(e.getStateMachineId(), e.getTaskId(), e.getExecutionVersion());
                             } catch (Exception ex) {
                                 logger.error("Something went wrong in redriving task:{} smId:{} with execution Version:{}, Error: {}", e.getTaskId(),
                                         e.getStateMachineId(), e.getExecutionVersion(), ex.getStackTrace());
@@ -138,7 +138,7 @@ public class RedriverService {
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
-                    logger.warn("Error while sleeping before checking async redrive callbacks {}", e);
+                    logger.warn("Error while sleeping before checking async redrive callbacks {}", e.getMessage(), e);
                 }
                 allCompleted = true;
                 for (int i = 0; i < tasksRedrived.size(); i++)

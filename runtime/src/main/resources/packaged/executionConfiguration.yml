@@ -25,7 +25,7 @@ runtime:
 
 flux.Orchestration.URL: "http://localhost:9998"
 deploymentType: directory
-deploymentUnitsPath: "/tmp/workflows/"
+deploymentUnitsPath: "C://Srinath/WorkDirectory/"
 
 enableAuditRecord: True
 

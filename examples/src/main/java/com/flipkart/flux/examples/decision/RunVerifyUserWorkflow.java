@@ -23,7 +23,7 @@ import com.google.inject.Injector;
  * This or a similar class like this is _not_ required to be present in your actual production jar
  */
 
-public class RunUserVerificationWorkflow {
+public class RunVerifyUserWorkflow {
     public static void main(String... args) throws Exception {
 
         /* Initialise _your_ module*/

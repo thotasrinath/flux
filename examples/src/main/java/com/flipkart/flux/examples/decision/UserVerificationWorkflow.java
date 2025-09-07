@@ -67,7 +67,7 @@ public class UserVerificationWorkflow {
      *
      * @param userVerificationStatus
      */
-    @Task(version = 1, timeout = 1000l, retries = 2)
+    @Task(version = 1, timeout = 1000L, retries = 2)
     public void checkVerificationStatus(UserVerificationStatus userVerificationStatus) {
         if (userVerificationStatus.isVerifiedUser()) {
             notificationService.sendWelcomeEmail(userVerificationStatus.getUserId());

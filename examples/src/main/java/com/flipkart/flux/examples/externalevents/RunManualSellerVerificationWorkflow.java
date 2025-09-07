@@ -29,8 +29,8 @@ public class RunManualSellerVerificationWorkflow {
         final ManualSellerVerificationFlow manualSellerVerificationFlow = injector.getInstance(ManualSellerVerificationFlow.class);
         /* Lets invoke our workflow */
 
-        String randomCorrelationId = "my-correlation-id-23";
-        manualSellerVerificationFlow.verifySeller(new SellerId(1l, randomCorrelationId));
+        String randomCorrelationId = "my-correlation-id-26";
+       // manualSellerVerificationFlow.verifySeller(new SellerId(25l, randomCorrelationId));
 
         /* Since we've initialised flux, the process will continue to run till you explicitly kill it */
         /* The workflow is currently waiting for the seller to post  the external event*/

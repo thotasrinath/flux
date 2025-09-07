@@ -61,7 +61,7 @@ public class ExecutionApiResource {
             ActorRef router = routerRegistry.getRouter(routerName);
             if (router != null) {
                 logger.info("Sending msg to router: {} to execute state machine: {} task: {} with execution version: {}",
-                    router.path(), msg.getStateMachineId(), msg.getTaskId(), msg.getTaskExecutionVersion());
+                        router.path(), msg.getStateMachineId(), msg.getTaskId(), msg.getTaskExecutionVersion());
                 router.tell(msg, ActorRef.noSender());
                 metricsClient.incCounter(new StringBuilder().
                         append("stateMachine.").
@@ -74,7 +74,7 @@ public class ExecutionApiResource {
                 return Response.status(Response.Status.NOT_FOUND).entity("Akka router for this executionMessage not found").build();
             }
         } catch (Exception ex) {
-            logger.error("Unable to append the task to the Actor Queue {}", ex);
+            logger.error("Unable to append the task to the Actor Queue {}", ex.getCause(), ex);
             return Response.serverError().entity(ex.getCause() != null ? ex.getCause().getMessage() : null).build();
         }
         return Response.accepted().build();
