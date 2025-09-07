@@ -3,7 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <properties>
-        <liquibase-maven-plugin.dbname>flux</liquibase-maven-plugin.dbname>
+        <liquibase-maven-plugin.migration-folder>flux</liquibase-maven-plugin.migration-folder>
+        <liquibase-maven-plugin.dbname>fb-flux</liquibase-maven-plugin.dbname>
+        <liquibase-maven-plugin.usename>root</liquibase-maven-plugin.usename>
+        <liquibase-maven-plugin.password>omsairam</liquibase-maven-plugin.password>
     </properties>
 
     <parent>
@@ -129,10 +132,11 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.4.2</version>
                 <configuration>
-                    <changeLogFile>${liquibase-maven-plugin.dbname}/migrations.xml</changeLogFile>
+                    <changeLogFile>${liquibase-maven-plugin.migration-folder}/migrations.xml</changeLogFile>
                     <driver>com.mysql.jdbc.Driver</driver>
                     <url>jdbc:mysql://localhost:3306/${liquibase-maven-plugin.dbname}</url>
-                    <username>root</username>
+                    <username>${liquibase-maven-plugin.username}</username>
+                    <password>${liquibase-maven-plugin.password}</password>
                     <dropFirst>false</dropFirst>
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                     <logging>info</logging>

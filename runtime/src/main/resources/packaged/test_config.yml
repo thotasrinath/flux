@@ -10,9 +10,9 @@ shard.Pair.Model.List:
 flux.Hibernate:
   hibernate.dialect: "org.hibernate.dialect.MySQLDialect"
   hibernate.connection.driver_class: "com.mysql.jdbc.Driver"
-  hibernate.connection.url: "jdbc:mysql://localhost:3306/flux"
+  hibernate.connection.url: "jdbc:mysql://localhost:3306/fb-flux"
   hibernate.connection.username: "root"
-  hibernate.connection.password: ""
+  hibernate.connection.password: "omsairam"
   hibernate.current_session_context_class: "managed"
   connection.provider_class: "org.hibernate.c3p0.internal.C3P0ConnectionProvider"
   hibernate.c3p0.min_size: 3
@@ -22,9 +22,9 @@ flux.Hibernate:
 fluxReadOnly.Hibernate:
   hibernate.dialect: "org.hibernate.dialect.MySQLDialect"
   hibernate.connection.driver_class: "com.mysql.jdbc.Driver"
-  hibernate.connection.url: "jdbc:mysql://localhost:3306/flux"
+  hibernate.connection.url: "jdbc:mysql://localhost:3306/fb-flux"
   hibernate.connection.username: "root"
-  hibernate.connection.password: ""
+  hibernate.connection.password: "omsairam"
   hibernate.current_session_context_class: "managed"
   connection.provider_class: "org.hibernate.c3p0.internal.C3P0ConnectionProvider"
   hibernate.c3p0.min_size: 3
@@ -33,9 +33,9 @@ fluxReadOnly.Hibernate:
 flux_scheduler.Hibernate:
   hibernate.dialect: "org.hibernate.dialect.MySQLDialect"
   hibernate.connection.driver_class: "com.mysql.jdbc.Driver"
-  hibernate.connection.url: "jdbc:mysql://localhost:3306/flux_scheduler"
+  hibernate.connection.url: "jdbc:mysql://localhost:3306/fb-flux"
   hibernate.connection.username: "root"
-  hibernate.connection.password: ""
+  hibernate.connection.password: "omsairam"
   hibernate.current_session_context_class: "managed"
   connection.provider_class: "org.hibernate.c3p0.internal.C3P0ConnectionProvider"
   hibernate.c3p0.min_size: 3

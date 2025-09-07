@@ -317,7 +317,8 @@ public class ShardModule extends AbstractModule {
             Object propertyValue = hibernateConfig.getProperty(propertyKey);
             configProperties.put(propertyKey, propertyValue);
         }
-        configProperties.setProperty("hibernate.connection.url", "jdbc:mysql://" + host + "/flux");
+        // Not requied not sure why is it added
+        // configProperties.setProperty("hibernate.connection.url", "jdbc:mysql://" + host + "/flux");
         configuration.addProperties(configProperties);
         return configuration;
     }
