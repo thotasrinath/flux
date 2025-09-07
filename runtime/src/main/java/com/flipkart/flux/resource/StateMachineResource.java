@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;

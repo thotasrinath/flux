@@ -30,7 +30,7 @@ import java.util.Set;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

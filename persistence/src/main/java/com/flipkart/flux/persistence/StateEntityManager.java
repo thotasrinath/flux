@@ -16,7 +16,7 @@ package com.flipkart.flux.persistence;
 import java.sql.Timestamp;
 
 import javax.inject.Inject;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import com.flipkart.flux.domain.State;
 import com.flipkart.flux.domain.Status;

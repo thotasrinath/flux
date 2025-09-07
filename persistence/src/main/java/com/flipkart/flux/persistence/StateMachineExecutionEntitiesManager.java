@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.PersistenceException;
+import jakarta.persistence.PersistenceException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

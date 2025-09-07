@@ -13,7 +13,7 @@
 package com.flipkart.flux.persistence;
 
 import javax.inject.Inject;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import com.flipkart.flux.domain.StateMachine;
 import com.flipkart.flux.domain.StateMachineStatus;

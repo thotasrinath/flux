@@ -13,11 +13,11 @@
 package com.flipkart.flux.persistence.dao.impl;
 
 import javax.inject.Inject;
-import javax.persistence.PersistenceException;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.PersistenceException;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 
 import com.flipkart.flux.domain.StateTraversalPath;
 import com.flipkart.flux.persistence.SessionFactoryContext;

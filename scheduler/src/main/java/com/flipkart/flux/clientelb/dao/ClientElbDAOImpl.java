@@ -14,7 +14,7 @@
 package com.flipkart.flux.clientelb.dao;
 
 import javax.inject.Inject;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;

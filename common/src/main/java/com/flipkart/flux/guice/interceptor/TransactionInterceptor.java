@@ -13,8 +13,9 @@
 
 package com.flipkart.flux.guice.interceptor;
 
-import javax.inject.Provider;
-import javax.persistence.PersistenceException;
+
+import com.google.inject.Provider;
+import jakarta.persistence.PersistenceException;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

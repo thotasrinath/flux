@@ -54,13 +54,13 @@
         </dependency>        
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
+            <artifactId>hibernate-core-jakarta</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>javax.transaction-api</artifactId>
-            <version>${javax.transaction-api.version}</version>
+            <groupId>jakarta.transaction</groupId>
+            <artifactId>jakarta.transaction-api</artifactId>
+            <version>2.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.flipkart.polyguice</groupId>
@@ -123,7 +123,6 @@
                     <execution>
                         <goals>
                             <goal>test-jar</goal>
-                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -134,6 +133,15 @@
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <argLine>${jvm.addopens}</argLine>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
                 </configuration>
             </plugin>
         </plugins>

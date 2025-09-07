@@ -20,7 +20,7 @@ import com.google.inject.name.Named;
 import org.hibernate.Session;
 import org.junit.Assert;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 /**
  * Created by gaurav.ashok on 24/11/16.

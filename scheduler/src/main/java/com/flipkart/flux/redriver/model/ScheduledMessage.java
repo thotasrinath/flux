@@ -14,10 +14,10 @@
 package com.flipkart.flux.redriver.model;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Table;
 
 /**
  * <code>ScheduledMessage</code> is a message that will be stored in DB for redriver purposes.

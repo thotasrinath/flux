@@ -47,30 +47,32 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.8</jdk.version>
-		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
-		<maven-jar-plugin.version>2.2</maven-jar-plugin.version>
-		<junit.version>4.12</junit.version>
+		<jdk.version>17</jdk.version>
+		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+		<junit.version>4.13.2</junit.version>
 		<hibernate.version>5.6.7.Final</hibernate.version>
-		<guice.version>4.0</guice.version>
+		<guice.version>7.0.0</guice.version>
 		<polyguice.version>1.0.2-SNAPSHOT.patched</polyguice.version>
 		<javax.inject.version>1</javax.inject.version>
 		<hystrix.version>1.5.1</hystrix.version>
 		<akka.version>2.4.6</akka.version>
-		<org.springframework.version>4.2.2.RELEASE</org.springframework.version>
+		<org.springframework.version>4.3.30.RELEASE</org.springframework.version>
 		<akka.cluster.metrics.version>2.4.4</akka.cluster.metrics.version>
 		<kamon.version>0.6.1</kamon.version>
 		<log4j.version>2.17.1</log4j.version>
-		<assertj-core.version>2.0.0</assertj-core.version>
-		<jackson.version>2.12.0</jackson.version>
-		<mockito-core.version>4.5.1</mockito-core.version>
-		<slf4j-api.version>1.7.12</slf4j-api.version>
-		<io.dropwizard.metrics.version>4.2.3</io.dropwizard.metrics.version>
-		<javax.transaction-api.version>1.2</javax.transaction-api.version>
-		<jersey.version>2.30</jersey.version>
-		<jetty.version>9.4.43.v20210629</jetty.version>
-		<jacoco.version>0.7.5.201505241946</jacoco.version>
-		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<assertj-core.version>3.24.2</assertj-core.version>
+		<jackson.version>2.14.3</jackson.version>
+		<mockito-core.version>4.11.0</mockito-core.version>
+		<slf4j-api.version>1.7.36</slf4j-api.version>
+		<io.dropwizard.metrics.version>4.2.23</io.dropwizard.metrics.version>
+		<javax.transaction-api.version>1.3</javax.transaction-api.version>
+		<jersey.version>2.37</jersey.version>
+		<jetty.version>9.4.53.v20231009</jetty.version>
+		<jacoco.version>0.8.10</jacoco.version>
+		<junit-jupiter.version>5.10.2</junit-jupiter.version>
+		<!-- JVM args to open JDK internals for Java 17 reflective access (Guice/Reflections/ByteBuddy) -->
+		<jvm.addopens>--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED</jvm.addopens>
 	</properties>
 
 	<dependencyManagement>

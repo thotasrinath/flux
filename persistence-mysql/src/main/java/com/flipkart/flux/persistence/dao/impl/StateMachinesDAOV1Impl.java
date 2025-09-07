@@ -15,13 +15,13 @@ package com.flipkart.flux.persistence.dao.impl;
 import java.util.LinkedList;
 
 import javax.inject.Inject;
-import javax.persistence.LockModeType;
-import javax.persistence.PersistenceException;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.CriteriaUpdate;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.LockModeType;
+import jakarta.persistence.PersistenceException;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.CriteriaUpdate;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 
 import com.flipkart.flux.domain.StateMachine;
 import com.flipkart.flux.persistence.SessionFactoryContext;

@@ -17,10 +17,10 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Table;
 import org.hibernate.annotations.Type;
 
 /**

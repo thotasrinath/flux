@@ -19,8 +19,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.inject.Provider;
-import javax.transaction.Transactional;
+
+import com.google.inject.*;
+import jakarta.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -68,10 +69,6 @@ import com.flipkart.flux.type.BlobType;
 import com.flipkart.flux.type.ListJsonType;
 import com.flipkart.flux.type.StoreFQNType;
 import com.flipkart.polyguice.config.YamlConfiguration;
-import com.google.inject.AbstractModule;
-import com.google.inject.Key;
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
 import com.google.inject.matcher.Matchers;
 import com.google.inject.name.Named;
 import com.google.inject.name.Names;

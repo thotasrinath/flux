@@ -16,8 +16,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.persistence.PersistenceException;
-import javax.transaction.Transactional;
+import jakarta.persistence.PersistenceException;
+import jakarta.transaction.Transactional;
 
 import com.flipkart.flux.persistence.dao.iface.DAO;
 import com.flipkart.flux.shard.ShardedEntity;

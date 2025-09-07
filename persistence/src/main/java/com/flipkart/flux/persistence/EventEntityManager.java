@@ -15,7 +15,7 @@ package com.flipkart.flux.persistence;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import com.flipkart.flux.api.VersionedEventData;
 import com.flipkart.flux.domain.Event;

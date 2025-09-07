@@ -61,7 +61,7 @@
         <!-- Third party dependencies -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
+            <artifactId>hibernate-core-jakarta</artifactId>
             <version>${hibernate.version}</version>
         </dependency>    
         <dependency>

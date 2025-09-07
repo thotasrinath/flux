@@ -13,7 +13,7 @@
 
 package com.flipkart.flux.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 /**

@@ -38,8 +38,11 @@ public class RunEmailMarketingWorkflow {
         final EmailMarketingWorkflow emailMarketingWorkflow = injector.getInstance(EmailMarketingWorkflow.class);
         /* Lets invoke our workflow */
         System.out.println("[Main] Starting workflow execution");
-        for(int i = 0 ; i < 1 ; i++)
-        emailMarketingWorkflow.sendEmails(new Email("some email body message", "someone@flipkart.com"), new Email("someMore", "someoneElse@fk.com"));
+        for (int i = 0; i < 100; i++){
+            Thread.sleep(1000);
+            emailMarketingWorkflow.sendEmails(new Email("some email body message", "someone@flipkart.com"), new Email("someMore", "someoneElse@fk.com"));
+        }
+
         System.out.println("[Main] See flux dashboard at http://localhost:9999/admin/dashboard");
         /* Observe the logs and see how different emails are sent from different threads! Its magic! */
     }

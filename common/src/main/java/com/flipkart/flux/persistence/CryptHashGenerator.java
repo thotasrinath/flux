@@ -33,7 +33,12 @@ public class CryptHashGenerator {
         try {
             MessageDigest md = MessageDigest.getInstance(cryptHashAlgorithmPrefix);
             md.update(stateMachineId.getBytes());
-            String cryptHash = javax.xml.bind.DatatypeConverter.printHexBinary(md.digest()).toLowerCase();
+            byte[] digest = md.digest();
+            StringBuilder sb = new StringBuilder(digest.length * 2);
+            for (byte b : digest) {
+                sb.append(String.format("%02x", b));
+            }
+            String cryptHash = sb.toString();
             return cryptHash.substring(0, 2);
         } catch (Exception ex) {
             logger.error("Unable to generate Hash for the given stateMachine Id {} {}", stateMachineId, ex.getStackTrace());

@@ -15,8 +15,8 @@ package com.flipkart.flux.persistence;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.persistence.PersistenceException;
-import javax.transaction.Transactional;
+import jakarta.persistence.PersistenceException;
+import jakarta.transaction.Transactional;
 
 import com.flipkart.flux.persistence.PersistenceConstants.Operation;
 import com.flipkart.flux.persistence.dao.iface.DAO;
