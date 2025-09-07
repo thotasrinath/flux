@@ -14,6 +14,7 @@
 package com.flipkart.flux.type;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +39,8 @@ import com.fasterxml.jackson.databind.type.CollectionType;
  */
 public class ListJsonType<T> implements UserType, Serializable {
 
-	private static final long serialVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 

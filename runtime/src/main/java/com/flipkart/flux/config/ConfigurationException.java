@@ -18,6 +18,8 @@ package com.flipkart.flux.config;
 
 import com.flipkart.flux.api.core.FluxError;
 
+import java.io.Serial;
+
 /**
  * The <code>ConfigurationException</code> is sub-type of the {@link FluxError} for use in the configuration modules
  *
@@ -25,7 +27,8 @@ import com.flipkart.flux.api.core.FluxError;
  */
 public class ConfigurationException extends FluxError {
 
-	private static final long serialVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for ConfigurationException.

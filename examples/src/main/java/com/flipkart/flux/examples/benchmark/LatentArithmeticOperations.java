@@ -2,6 +2,8 @@ package com.flipkart.flux.examples.benchmark;
 
 import com.flipkart.flux.client.model.Task;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class LatentArithmeticOperations {
     @Task(version = 1, retries = 3, timeout = 1000)
     public EventTypeInteger addLatent(EventTypeInteger a, EventTypeInteger b) {
@@ -63,11 +65,11 @@ public class LatentArithmeticOperations {
     @Task(version = 1, retries = 3, timeout = 1000)
     public EventTypeInteger randomLatent(EventTypeInteger a) {
         shouldSleep();
-        return new EventTypeInteger((int) (Math.random() * a.getValue()));
+        return new EventTypeInteger((int) (ThreadLocalRandom.current().nextDouble() * a.getValue()));
     }
 
     public void shouldSleep() {
-        int x = (int) (Math.random() * 10000.0);
+        int x = (int) (ThreadLocalRandom.current().nextDouble() * 10000.0);
         System.out.println("x value is " + x);
         try {
             if (x <= 5) {

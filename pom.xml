@@ -47,12 +47,12 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.8</jdk.version>
-		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		<jdk.version>17</jdk.version>
+		<maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
 		<maven-jar-plugin.version>2.2</maven-jar-plugin.version>
 		<junit.version>4.12</junit.version>
 		<hibernate.version>5.6.7.Final</hibernate.version>
-		<guice.version>4.0</guice.version>
+		<guice.version>5.1.0</guice.version>
 		<polyguice.version>1.0.2-SNAPSHOT.patched</polyguice.version>
 		<javax.inject.version>1</javax.inject.version>
 		<hystrix.version>1.5.1</hystrix.version>
@@ -69,7 +69,7 @@
 		<javax.transaction-api.version>1.2</javax.transaction-api.version>
 		<jersey.version>2.30</jersey.version>
 		<jetty.version>9.4.43.v20210629</jetty.version>
-		<jacoco.version>0.7.5.201505241946</jacoco.version>
+		<jacoco.version>0.8.13</jacoco.version>
 		<junit-jupiter.version>5.5.2</junit-jupiter.version>
 	</properties>
 
@@ -89,7 +89,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.2</version>
+				<version>0.8.13</version>
 				<executions>
 					<execution>
 						<goals>
@@ -106,6 +106,23 @@
 					</execution>
 				</executions>
 			</plugin>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>6.16.1</version>
+                <configuration>
+                    <activeRecipes>
+                        <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
+                    </activeRecipes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.openrewrite.recipe</groupId>
+                        <artifactId>rewrite-migrate-java</artifactId>
+                        <version>3.16.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 		</plugins>
 	</build>
 	

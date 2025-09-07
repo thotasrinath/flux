@@ -2,7 +2,6 @@ package com.flipkart.flux.deploymentunit;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -76,7 +75,7 @@ public class DeploymentUnitsManagerImpl implements DeploymentUnitsManager, Initi
     @Override
     public DeploymentUnit load(String name, Integer version) throws Exception {
         logger.info("LOADING deployment Unit: {}/{}", name, version);
-        Path deploymentUnitDir = Paths.get(name, version.toString());
+        Path deploymentUnitDir = Path.of(name, version.toString());
 
         // get latest
         DeploymentUnit latestUnit = getLatestFromMap(name);
@@ -130,9 +129,9 @@ public class DeploymentUnitsManagerImpl implements DeploymentUnitsManager, Initi
         for (String taskId : foundUnit.getTaskMethods().keySet()) {
             Executable exe = executableRegistry.getTask(taskId);
 
-            if (exe instanceof TaskExecutableImpl) {
+            if (exe instanceof TaskExecutableImpl impl) {
                 // if the executable belongs to this classLoader, remove it
-                if (((TaskExecutableImpl) exe).getDeploymentUnitClassLoader() == foundUnit.getDeploymentUnitClassLoader()) {
+                if (impl.getDeploymentUnitClassLoader() == foundUnit.getDeploymentUnitClassLoader()) {
                     executableRegistry.unregisterTask(taskId);
                 }
             } else {

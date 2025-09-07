@@ -41,6 +41,11 @@
 			<artifactId>model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+    <dependency>
+      <groupId>jakarta.inject</groupId>
+      <artifactId>jakarta.inject-api</artifactId>
+      <version>1.0.3</version>
+    </dependency>
 		<dependency>
 			<groupId>com.flipkart.flux</groupId>
 			<artifactId>common</artifactId>
@@ -90,8 +95,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
+          <release>17</release>
                 </configuration>
             </plugin>
         </plugins>

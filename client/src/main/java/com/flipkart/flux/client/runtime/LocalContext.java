@@ -180,7 +180,7 @@ public class LocalContext {
         }).forEach(allDefinitions::addAll);
         final Optional<EventDefinition> searchResult =
                 allDefinitions.stream().filter(eventDefinition -> givenDefinition.getName().equals(eventDefinition.getName())).findFirst();
-        if (!searchResult.isPresent()) {
+        if (searchResult.isEmpty()) {
             return null;
         }
         final EventDefinition eventDefinitionWithMatchingName = searchResult.get();

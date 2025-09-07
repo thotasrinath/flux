@@ -18,7 +18,6 @@ import com.flipkart.polyguice.config.YamlConfiguration;
 
 import java.net.URL;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class DummyDeploymentUnitUtil implements DeploymentUnitUtil {
 
     @Override
     public List<Path> listAllDirectoryUnits() {
-        return Collections.singletonList(Paths.get("Dummy_deployment_unit"));
+        return Collections.singletonList(Path.of("Dummy_deployment_unit"));
     }
 
     @Override

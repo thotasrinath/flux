@@ -68,22 +68,22 @@ public class StatesDAOV1Impl extends AbstractDAO<State> implements StatesDAOV1{
 
 	@Override
 	public State findEntity(Object key) {
-		if (key instanceof FSMIdEntityId) {
-			return this.findByCompositeId((FSMIdEntityId)key);
-		}  else if (key instanceof EntityId) {
-			return super.findById(State.class,((EntityId)key).entityId);	
+		if (key instanceof FSMIdEntityId id1) {
+			return this.findByCompositeId(id1);
+		}  else if (key instanceof EntityId id) {
+			return super.findById(State.class,id.entityId);	
 		}
 		throw new PersistenceException("Find State is not supported for : " + key);
 	}
 
 	@Override
 	public State[] findEntities(Object key) {
-		if (key instanceof FSMIdStateIds) {
-			return this.findStatesForStateIds((FSMIdStateIds)key);
-		} else if (key instanceof FSMStatusCriteria) {
-			return this.findStatesByStatusCriteria((FSMStatusCriteria)key);
-		}else if (key instanceof DependentEventCriteria) {
-			return this.findStatesByDependentEvent((DependentEventCriteria)key);
+		if (key instanceof FSMIdStateIds ids) {
+			return this.findStatesForStateIds(ids);
+		} else if (key instanceof FSMStatusCriteria criteria1) {
+			return this.findStatesByStatusCriteria(criteria1);
+		}else if (key instanceof DependentEventCriteria criteria) {
+			return this.findStatesByDependentEvent(criteria);
 		}
 		throw new PersistenceException("Find StateS is not supported for key : " + key);
 	}
@@ -93,32 +93,32 @@ public class StatesDAOV1Impl extends AbstractDAO<State> implements StatesDAOV1{
 		StateUpdate.StateUpdateField stateUpdateField = (StateUpdate.StateUpdateField)field;
 		switch(stateUpdateField) {
 		case status:
-			if (updates instanceof StateUpdate.StatusUpdate) {
-				this.updateStatus((StateUpdate.StatusUpdate)updates);
+			if (updates instanceof StateUpdate.StatusUpdate update) {
+				this.updateStatus(update);
 				return;
 			}
 			break;
 		case rollbackStatus:
-			if (updates instanceof StateUpdate.RollbackStatusUpdate) {
-				this.updateRollbackStatus((StateUpdate.RollbackStatusUpdate)updates);
+			if (updates instanceof StateUpdate.RollbackStatusUpdate update) {
+				this.updateRollbackStatus(update);
 				return;
 			}
 			break;
 		case attemptedNoOfRetries:			
-			if (updates instanceof StateUpdate.NoOfRetriesIncrement) {
-				this.incrementRetryCount((StateUpdate.NoOfRetriesIncrement)updates);
+			if (updates instanceof StateUpdate.NoOfRetriesIncrement increment) {
+				this.incrementRetryCount(increment);
 				return;
 			}
 			break;
 		case attemptedNumOfReplayableRetries:
-			if (updates instanceof StateUpdate.ReplayableRetriesUpdate) {
-				this.updateReplayableRetries((StateUpdate.ReplayableRetriesUpdate)updates);
+			if (updates instanceof StateUpdate.ReplayableRetriesUpdate update) {
+				this.updateReplayableRetries(update);
 				return;
 			}
 			break;
 		case executionVersion:
-			if (updates instanceof StateUpdate.ExecutionVersionUpdate) {
-				this.updateExecutionVersion((StateUpdate.ExecutionVersionUpdate)updates);
+			if (updates instanceof StateUpdate.ExecutionVersionUpdate update) {
+				this.updateExecutionVersion(update);
 				return;
 			}
 			break;

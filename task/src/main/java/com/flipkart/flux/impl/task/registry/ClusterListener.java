@@ -72,15 +72,12 @@ public class ClusterListener extends UntypedActor {
 	 * @see akka.actor.UntypedActor#onReceive(java.lang.Object)
 	 */
 	public void onReceive(Object message) {
-		if (message instanceof MemberUp) {
-			MemberUp mUp = (MemberUp) message;
+		if (message instanceof MemberUp mUp) {
 			logger.info("Cluster Member is Up: " + mUp.member());
 			memberAddresses.add(mUp.member().address());
-		} else if (message instanceof UnreachableMember) {
-			UnreachableMember mUnreachable = (UnreachableMember) message;
+		} else if (message instanceof UnreachableMember mUnreachable) {
 			logger.info("Cluster Member detected as unreachable " + mUnreachable.member());
-		} else if (message instanceof MemberRemoved) {
-			MemberRemoved mRemoved = (MemberRemoved) message;
+		} else if (message instanceof MemberRemoved mRemoved) {
 			logger.info("Cluster Member is Removed: " + mRemoved.member());
 			memberAddresses.remove(mRemoved.member().address());
 		} else if (message instanceof MemberEvent) {

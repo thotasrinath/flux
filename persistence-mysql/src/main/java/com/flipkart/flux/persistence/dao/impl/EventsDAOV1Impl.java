@@ -58,16 +58,16 @@ public class EventsDAOV1Impl extends AbstractDAO<Event> implements EventsDAOV1 {
 
 	@Override
 	public Event findEntity(Object key) {
-		if (key instanceof EntityId) {
-			return super.findById(Event.class,((EntityId)key).entityId);	
+		if (key instanceof EntityId id) {
+			return super.findById(Event.class,id.entityId);	
 		}
 		throw new PersistenceException("Find Event is not supported for : " + key);	
 	}
 
 	@Override
 	public Event[] findEntities(Object key) {
-		if (key instanceof EventStatusCriteria) {
-			return this.findEventsByStatusCriteria((EventStatusCriteria)key);
+		if (key instanceof EventStatusCriteria criteria) {
+			return this.findEventsByStatusCriteria(criteria);
 		} 
 		throw new PersistenceException("Find EventS is not supported for key : " + key);	
 	}

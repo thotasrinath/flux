@@ -269,12 +269,12 @@ public class AkkaTask extends UntypedActor {
             }
         } else if (HookExecutor.STATUS.class.isAssignableFrom(message.getClass())) { //todo Revisit the retry logic when Hook support is added
             // do nothing as we don't process or interpret Hook execution responses
-        } else if (message instanceof Terminated) {
+        } else if (message instanceof Terminated terminated) {
             /*
              * add a fresh local AkkaHook instance to the router. This happens only for local JVM routers i.e when Flux runtime
 			 * in local and not distributed/clustered
 			 */
-            hookRouter = hookRouter.removeRoutee(((Terminated) message).actor());
+            hookRouter = hookRouter.removeRoutee(terminated.actor());
             ActorRef r = getContext().actorOf(Props.create(AkkaHook.class));
             getContext().watch(r);
             hookRouter = hookRouter.addRoutee(new ActorRefRoutee(r));

@@ -19,7 +19,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -59,7 +58,7 @@ public class DirectoryBasedDeploymentUnitUtil implements DeploymentUnitUtil {
     /** Lists all deployment unit names by directory scanning */
     public List<Path> listAllDirectoryUnits() throws IOException {
         if(deploymentUnitsPath != null) {
-            return getSubDirectories(Paths.get(deploymentUnitsPath)).map(this::getSubDirectories).
+            return getSubDirectories(Path.of(deploymentUnitsPath)).map(this::getSubDirectories).
                     flatMap(t -> t).collect(Collectors.toList());
         } else {
             return new ArrayList<>();
@@ -69,7 +68,7 @@ public class DirectoryBasedDeploymentUnitUtil implements DeploymentUnitUtil {
     @Override
     public DeploymentUnit getDeploymentUnit(Path path) throws ClassNotFoundException, IOException, NumberFormatException {
         if(!path.isAbsolute()) {
-            path = Paths.get(deploymentUnitsPath, path.toString());
+            path = Path.of(deploymentUnitsPath, path.toString());
         }
         int nameCount = path.getNameCount();
         String deploymentUnitName = path.getName(nameCount - 2).toString();

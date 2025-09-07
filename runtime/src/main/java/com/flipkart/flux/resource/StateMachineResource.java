@@ -1181,12 +1181,12 @@ public class StateMachineResource {
       return null;
     }
     String words = label.replaceAll(
-        // Based on http://stackoverflow.com/questions/2559759/how-do-i-convert-camelcase-into-human-readable-names-in-java
-        String.format("%s|%s|%s",
-            "(?<=[A-Z])(?=[A-Z][a-z])",
-            "(?<=[^A-Z])(?=[A-Z])",
-            "(?<=[A-Za-z])(?=[^A-Za-z])"
-        ), " ");
+            // Based on http://stackoverflow.com/questions/2559759/how-do-i-convert-camelcase-into-human-readable-names-in-java
+            "%s|%s|%s".formatted(
+                    "(?<=[A-Z])(?=[A-Z][a-z])",
+                    "(?<=[^A-Z])(?=[A-Z])",
+                    "(?<=[A-Za-z])(?=[^A-Za-z])"
+            ), " ");
     StringBuffer sb = new StringBuffer();
     for (String s : words.split(" ")) {
       sb.append(Character.toUpperCase(s.charAt(0)));

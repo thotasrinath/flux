@@ -136,6 +136,11 @@
             <artifactId>kamon-jmx_2.11</artifactId>
             <version>${kamon.version}</version>
         </dependency>
+    <dependency>
+      <groupId>jakarta.inject</groupId>
+      <artifactId>jakarta.inject-api</artifactId>
+      <version>1.0.3</version>
+    </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -228,8 +233,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
+          <release>17</release>
                 </configuration>
             </plugin>
         </plugins>

@@ -64,16 +64,16 @@ public class StateMachinesDAOV1Impl extends AbstractDAO<StateMachine> implements
 
 	@Override
 	public StateMachine findEntity(Object key) {
-		if (key instanceof FSMId) {
-			return super.findById(StateMachine.class,((FSMId)key).statemachineId);	
+		if (key instanceof FSMId id) {
+			return super.findById(StateMachine.class,id.statemachineId);	
 		} 
 		throw new PersistenceException("Find StateMachine is not supported for : " + key);
 	}
 
 	@Override
 	public StateMachine[] findEntities(Object key) {
-		if (key instanceof FSMNameCriteria) {
-			return this.findByFSMName((FSMNameCriteria)key);
+		if (key instanceof FSMNameCriteria criteria) {
+			return this.findByFSMName(criteria);
 		} 
 		throw new PersistenceException("Find StateMachineS is not supported for key : " + key);	
 	}
@@ -83,14 +83,14 @@ public class StateMachinesDAOV1Impl extends AbstractDAO<StateMachine> implements
 		StateUpdateField stateupdateField = (StateUpdateField)field;
 		switch(stateupdateField) {
 		case status:
-			if (updates instanceof StateMachineUpdate.StatusUpdate) {
-				this.updateStatus((StateMachineUpdate.StatusUpdate)updates);
+			if (updates instanceof StateMachineUpdate.StatusUpdate update) {
+				this.updateStatus(update);
 				return;
 			}
 			break;
 		case executionVersion:
-			if (updates instanceof StateMachineUpdate.ExecutionVersionUpdate) {
-				this.updateExecutionVersion((StateMachineUpdate.ExecutionVersionUpdate)updates);
+			if (updates instanceof StateMachineUpdate.ExecutionVersionUpdate update) {
+				this.updateExecutionVersion(update);
 				return;
 			}
 			break;

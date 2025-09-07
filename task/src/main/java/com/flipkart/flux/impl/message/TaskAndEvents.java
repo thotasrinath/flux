@@ -14,6 +14,7 @@
 
 package com.flipkart.flux.impl.message;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -30,8 +31,9 @@ import com.flipkart.flux.impl.task.AkkaTask;
  *
  */
 public class TaskAndEvents implements Serializable {
-	/** Default serialversion UID*/
-	private static final long serialVersionUID = 1L;
+    /** Default serialversion UID*/
+    @Serial
+    private static final long serialVersionUID = 1L;
 	/* The task name*/
 	private String taskName;
     /* The string that uniquely identifies a client task to be executed */

@@ -56,16 +56,16 @@ public class StateTraversalPathDAOV1Impl extends AbstractDAO<StateTraversalPath>
 
 	@Override
 	public StateTraversalPath findEntity(Object key) {
-		if (key instanceof FSMIdEntityId) {
-			return this.findByCompositeId((FSMIdEntityId)key);	
+		if (key instanceof FSMIdEntityId id) {
+			return this.findByCompositeId(id);	
 		}
 		throw new PersistenceException("Find StateTraversalPath is not supported for : " + key);	
 	}
 
 	@Override
 	public StateTraversalPath[] findEntities(Object key) {
-		if (key instanceof FSMId) {
-			return this.findStateTraversalPathsByFSMId((FSMId)key);
+		if (key instanceof FSMId id) {
+			return this.findStateTraversalPathsByFSMId(id);
 		} 
 		throw new PersistenceException("Find StateTraversalPathS is not supported for key : " + key);	
 	}

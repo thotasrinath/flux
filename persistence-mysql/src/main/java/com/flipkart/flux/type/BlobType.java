@@ -13,12 +13,7 @@
 
 package com.flipkart.flux.type;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -41,8 +36,9 @@ import org.hibernate.usertype.UserType;
  * @author shyam.akirala
  */
 public class BlobType implements UserType, DynamicParameterizedType, Serializable {
-	
-	private static final long serialVersionUID = 1L;
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 	
 	private static final Logger logger = LogManager.getLogger(BlobType.class);
 	

@@ -12,6 +12,7 @@
  */
 package com.flipkart.flux.api;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -24,6 +25,7 @@ public class ExecutionUpdateData implements Serializable {
     /**
      * Default serial version UID
      */
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /**

@@ -69,8 +69,8 @@ public class AuditDAOV1Impl extends AbstractDAO<AuditRecord> implements AuditDAO
 
 	@Override
 	public AuditRecord[] findEntities(Object key) {
-		if (key instanceof FSMId) {
-			return this.findAuditRecordsForFSMId((FSMId)key);
+		if (key instanceof FSMId id) {
+			return this.findAuditRecordsForFSMId(id);
 		} 
 		throw new PersistenceException("Find AuditRecordS is not supported for key : " + key);		
 	}

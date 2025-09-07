@@ -177,8 +177,8 @@ public class TaskInterceptor implements MethodInterceptor {
                 continue;
             }
 
-            if (argument instanceof Intercepted) {
-                eventDefinitions.add(new EventDefinition(((Event) argument).name(), ((Intercepted) argument).getRealClassName()));
+            if (argument instanceof Intercepted intercepted) {
+                eventDefinitions.add(new EventDefinition(((Event) argument).name(), intercepted.getRealClassName()));
             } else {
                 String eventName = localContext.generateEventName((Event) argument);
                 eventDefinitions.add(new EventDefinition(eventName, argument.getClass().getName()));

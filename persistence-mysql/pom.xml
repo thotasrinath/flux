@@ -86,6 +86,11 @@
             <artifactId>polyguice-config</artifactId>
             <version>${polyguice.version}</version>
         </dependency>
+    <dependency>
+      <groupId>jakarta.inject</groupId>
+      <artifactId>jakarta.inject-api</artifactId>
+      <version>1.0.3</version>
+    </dependency>
     </dependencies>
 
     <build>
@@ -119,8 +124,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
+          <release>17</release>
                 </configuration>
             </plugin>
             <!-- mysql db migration plugin-->

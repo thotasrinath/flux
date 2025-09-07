@@ -2,6 +2,8 @@ package com.flipkart.flux.examples.benchmark;
 
 import com.flipkart.flux.client.model.Task;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class PaymentGatewayTasks {
 
     @Task(version = 4, retries = 3, timeout = 1000)
@@ -25,9 +27,9 @@ public class PaymentGatewayTasks {
         long p = 10000;
         long q = 20000;
         long r = p * q;
-        p = q + (r * (long) Math.random());
+        p = q + (r * (long) ThreadLocalRandom.current().nextDouble());
 
-        return new EventTypeInteger((int) ((int) Math.random() * a.getValue() + b.getValue() - p));
+        return new EventTypeInteger((int) ((int) ThreadLocalRandom.current().nextDouble() * a.getValue() + b.getValue() - p));
     }
 
     @Task(version = 4, retries = 3, timeout = 1000)
@@ -38,9 +40,9 @@ public class PaymentGatewayTasks {
         long p = 10000;
         long q = 20000;
         long r = p * q;
-        p = q + (r * (long) Math.random());
+        p = q + (r * (long) ThreadLocalRandom.current().nextDouble());
 
-        return new EventTypeInteger((int) ((int) Math.random() * a.getValue() + b.getValue() - p));
+        return new EventTypeInteger((int) ((int) ThreadLocalRandom.current().nextDouble() * a.getValue() + b.getValue() - p));
     }
 
     @Task(version = 4, retries = 3, timeout = 1000)
@@ -51,9 +53,9 @@ public class PaymentGatewayTasks {
         long p = 10000;
         long q = 20000;
         long r = p * q;
-        p = p + (r * (long) Math.random());
+        p = p + (r * (long) ThreadLocalRandom.current().nextDouble());
 
-        return new EventTypeInteger((int) Math.random() + a.getValue());
+        return new EventTypeInteger((int) ThreadLocalRandom.current().nextDouble() + a.getValue());
     }
 
     @Task(version = 4, retries = 3, timeout = 1000)
@@ -64,19 +66,19 @@ public class PaymentGatewayTasks {
         long p = 10000;
         long q = 20000;
         long r = p * q;
-        p = p + (r * (long) Math.random());
+        p = p + (r * (long) ThreadLocalRandom.current().nextDouble());
 
-        return new EventTypeInteger((int) Math.random() + a.getValue());
+        return new EventTypeInteger((int) ThreadLocalRandom.current().nextDouble() + a.getValue());
     }
 
     @Task(version = 4, retries = 3, timeout = 1000)
     public EventTypeInteger SBIPaymentSuccess(EventTypeInteger a) {
-        return new EventTypeInteger(a.getValue() * (int) Math.random());
+        return new EventTypeInteger(a.getValue() * (int) ThreadLocalRandom.current().nextDouble());
     }
 
     @Task(version = 4, retries = 3, timeout = 1000)
     public EventTypeInteger HDFCPaymentSuccess(EventTypeInteger a) {
-        return new EventTypeInteger(a.getValue() * (int) Math.random());
+        return new EventTypeInteger(a.getValue() * (int) ThreadLocalRandom.current().nextDouble());
     }
 
     @Task(version = 4, retries = 3, timeout = 1000)

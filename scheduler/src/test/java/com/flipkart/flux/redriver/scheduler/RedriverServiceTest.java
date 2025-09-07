@@ -20,6 +20,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -87,7 +88,7 @@ public class RedriverServiceTest {
         Thread.sleep(1000);
         redriverService.stop();
         for (long i = 0; i < 100; i++) {
-            long x = (long) (Math.random() * 1000.0);
+            long x = (long) (ThreadLocalRandom.current().nextDouble() * 1000.0);
             verify(redriverRegistry).redriveTask("sample-state-machine-uuid", x,0l);
         }
     }

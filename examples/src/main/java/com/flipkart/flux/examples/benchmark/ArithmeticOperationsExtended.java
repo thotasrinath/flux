@@ -2,6 +2,8 @@ package com.flipkart.flux.examples.benchmark;
 
 import com.flipkart.flux.client.model.Task;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class ArithmeticOperationsExtended {
 
     @Task(version = 1, retries = 3, timeout = 1000)
@@ -58,7 +60,7 @@ public class ArithmeticOperationsExtended {
 
     @Task(version = 1, retries = 3, timeout = 1000)
     public EventTypeInteger randomE(EventTypeInteger a) {
-        return new EventTypeInteger((int) (Math.random() * a.getValue()));
+        return new EventTypeInteger((int) (ThreadLocalRandom.current().nextDouble() * a.getValue()));
     }
 
     public void makePositive(EventTypeInteger a, EventTypeInteger b) {

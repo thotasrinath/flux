@@ -13,6 +13,8 @@
 
 package com.flipkart.flux.api.core;
 
+import java.io.Serial;
+
 /**
  * <code>FluxError</code> defines an error in the Flux runtime.
  * 
@@ -22,9 +24,10 @@ package com.flipkart.flux.api.core;
  * 
  */
 public class FluxError extends RuntimeException {
-	
-	/** Default serial version UID */
-	private static final long serialVersionUID = 1L;
+
+    /** Default serial version UID */
+    @Serial
+    private static final long serialVersionUID = 1L;
 	
 	/** Default Fill in stack trace setting*/
 	private static final boolean DEFAULT_FILL_IN_STACK_TRACE = true;

@@ -13,6 +13,7 @@
 
 package com.flipkart.flux.domain;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -41,6 +42,7 @@ public class Event implements Serializable {
     /**
      * Default serial version UID
      */
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
